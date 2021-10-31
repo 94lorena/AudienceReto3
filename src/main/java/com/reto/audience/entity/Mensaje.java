@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "message")
 
-public class Mensaje {
+public class Mensaje implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

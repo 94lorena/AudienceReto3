@@ -23,7 +23,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "reservation")
 
-public class Reserva {
+public class Reserva implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

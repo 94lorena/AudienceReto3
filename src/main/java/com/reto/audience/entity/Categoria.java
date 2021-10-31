@@ -24,7 +24,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "category")
 
-public class Categoria {
+public class Categoria implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

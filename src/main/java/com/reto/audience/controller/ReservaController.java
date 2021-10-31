@@ -10,6 +10,8 @@ package com.reto.audience.controller;
  */
 
 import com.reto.audience.entity.Reserva;
+import com.reto.audience.report.ClienteContador;
+import com.reto.audience.report.ReservaStatus;
 import com.reto.audience.service.ReservaService;
 import java.util.List;
 import java.util.Optional;
@@ -59,5 +61,20 @@ public class ReservaController {
     public boolean delete(@PathVariable("id") int reservationId) {
         return servicio.deleteReservation(reservationId);
     }
+    @GetMapping("/report-status")
+    public ReservaStatus getReserva(){
+        return servicio.getReporteStatusReserva();
+    }
     
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reserva> getReservaTiempo (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo){
+        return servicio.getReportesTiempoReserva(dateOne, dateTwo);
+    }
+    
+    @GetMapping("/report-clients")
+    public List<ClienteContador> getCliente(){
+        return servicio.servicioTopCliente();
+    
+    }
+   
 }
